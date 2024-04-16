@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/Fonts/continum.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Fonts/UX.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/NewGame.gd" type="Script" id=3]
 
 [node name="ColorRect" type="ColorRect"]
 anchor_right = 1.0
@@ -19,3 +21,24 @@ margin_right = 786.0
 margin_bottom = 122.0
 custom_fonts/font = ExtResource( 1 )
 text = "Game Over"
+
+[node name="CenterContainer2" type="CenterContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_bottom = 156.0
+
+[node name="LinkButton" type="LinkButton" parent="CenterContainer2"]
+margin_left = 323.0
+margin_top = 50.0
+margin_right = 701.0
+margin_bottom = 105.0
+custom_colors/font_color = Color( 0, 0.768627, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0.768627, 1, 0.784314 )
+custom_colors/font_color_pressed = Color( 0, 0.768627, 1, 0.588235 )
+custom_fonts/font = ExtResource( 2 )
+text = "Main Menu"
+script = ExtResource( 3 )
+scene_to_load = "MainMenu"
+
+[connection signal="pressed" from="CenterContainer2/LinkButton" to="CenterContainer2/LinkButton" method="_on_New_Game_pressed"]

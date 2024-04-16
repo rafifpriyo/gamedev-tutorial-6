@@ -56,6 +56,8 @@ custom_colors/font_color = Color( 1, 0, 0, 0.588235 )
 custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
 custom_fonts/font = ExtResource( 3 )
 text = "Stage Select"
+script = ExtResource( 4 )
+scene_to_load = "Stage Select"
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
 margin_left = 509.0
@@ -71,3 +73,4 @@ margin_bottom = 284.0
 texture = ExtResource( 1 )
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" method="_on_New_Game_pressed"]
