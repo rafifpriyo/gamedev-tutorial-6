@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Fonts/UX.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/TimeLeft.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Countdown.gd" type="Script" id=3]
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.423529, 0.862745, 0.882353, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+margin_left = 426.0
+margin_top = 272.0
+margin_right = 597.0
+margin_bottom = 327.0
+custom_colors/font_color = Color( 0, 0.180392, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Time"
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="CenterContainer/Label"]
+one_shot = true
+autostart = true
+script = ExtResource( 3 )
+
+[connection signal="timeout" from="CenterContainer/Label/Timer" to="CenterContainer/Label/Timer" method="_on_Timer_timeout"]
